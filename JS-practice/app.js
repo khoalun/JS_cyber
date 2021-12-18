@@ -116,10 +116,10 @@ function averageScore(math, physic, chemical) {
   return (math + physic + chemical) / 3;
 }
 
-function validateScore(good, bad, average) {
+function validateScore(averageScore) {
   if (averageScore > 8) {
     return "Good";
-  } else if (6 < averageScore < 8) {
+  } else if (6 < averageScore && averageScore< 8) {
     return "Normal";
   } else {
     return "Bad";
@@ -127,8 +127,8 @@ function validateScore(good, bad, average) {
 }
 
 function onChange() {
-  var result = averageScore(9, 8, 8);
-  var qualify = validateScore(averageScore);
+  var result = averageScore(5, 6, 8);
+  var qualify = validateScore(result);
   console.log(result);
   console.log(qualify);
 }
